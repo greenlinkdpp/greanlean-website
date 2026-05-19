@@ -1,0 +1,29 @@
+{
+  "product_name": "Organic Cotton T-Shirt",
+  "sku": "SKU-TX-2025-001",
+  "manufacturer": "Qingdao Green Textile Co., Ltd.",
+  "country": "China",
+  "carbon_footprint": "3.2kg CO2e",
+  "recyclability": "82%",
+  "material": [
+    {
+      "name": "Organic Cotton",
+      "percentage": "95%"
+    },
+    {
+      "name": "Elastane",
+      "percentage": "5%"
+    }
+  ],
+  "certifications": [
+    "GOTS",
+    "OEKO-TEX",
+    "REACH"
+  ],
+  "supply_chain": [
+    "Cotton Farming",
+    "Spinning",
+    "Dyeing",
+    "Garment Manufacturing"
+  ]
+}
