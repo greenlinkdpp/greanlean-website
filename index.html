@@ -1,606 +1,548 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GreenLean 格林链｜欧盟数字产品护照 DPP 服务商，提供 DPP 数据整理、ESPR 合规、二维码生成、供应链溯源与数字护照展示服务。" />
-  <meta name="keywords" content="DPP, 数字产品护照, ESPR, 欧盟法规, 纺织DPP, Digital Product Passport" />
 
-  <title>GreenLean 格林链｜欧盟数字产品护照 DPP 服务商</title>
+  <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <title>GreenLean 格林链 - 欧盟数字产品护照DPP服务商</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --green: #1D9E75;
-      --green-dark: #0F6E56;
-      --bg: #ffffff;
-      --bg-soft: #f7f9f8;
-      --text: #111827;
-      --text-light: #6b7280;
-      --border: #e5e7eb;
-      --radius: 16px;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-wrap {
-      height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-box {
-      width: 40px;
-      height: 40px;
-      background: var(--green);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 18px;
-    }
-
-    .logo-title {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .logo-sub {
-      font-size: 12px;
-      color: var(--text-light);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--text-light);
-      transition: .2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .btn {
-      border: none;
-      cursor: pointer;
-      transition: .2s;
-      border-radius: 12px;
-      padding: 12px 22px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--green-dark);
-    }
-
-    .hero {
-      padding: 100px 0 80px;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e7f7f1;
-      color: var(--green-dark);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      font-weight: 700;
-    }
-
-    .hero h1 span {
-      color: var(--green);
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--text-light);
-      font-size: 18px;
-    }
-
-    .hero-btns {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 36px;
-      flex-wrap: wrap;
-    }
-
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-title {
-      font-size: 40px;
-      margin-bottom: 18px;
-      text-align: center;
-    }
-
-    .section-desc {
-      max-width: 760px;
-      margin: 0 auto 56px;
-      text-align: center;
-      color: var(--text-light);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-    }
-
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      background: #eef9f5;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--green);
-      margin-bottom: 18px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    .demo {
-      background: var(--bg-soft);
-      border-radius: 28px;
-      padding: 48px;
-      border: 1px solid var(--border);
-    }
-
-    .passport {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin-top: 32px;
-    }
-
-    .passport-head {
-      background: var(--green);
-      padding: 28px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .passport-body {
-      padding: 32px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    .info-item {
-      background: var(--bg-soft);
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .info-label {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-bottom: 4px;
-    }
-
-    .info-value {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .contact {
-      background: var(--green);
-      color: white;
-      border-radius: 28px;
-      padding: 56px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 42px;
-      margin-bottom: 16px;
-    }
-
-    .contact p {
-      max-width: 760px;
-      margin: 0 auto;
-      opacity: .88;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .contact-item {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 14px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    footer {
-      padding: 32px 0;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .demo {
-        padding: 24px;
-      }
-
-      .contact {
-        padding: 36px 24px;
-      }
-
-      .contact h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <nav class="nav">
-    <div class="container nav-wrap">
-      <div class="logo">
-        <div class="logo-box">
-          <i class="ti ti-qrcode"></i>
-        </div>
+  <i class="ti ti-xxx"></i>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-mark{width:32px;height:32px;background:#1D9E75;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-en{font-size:16px;font-weight:500;color:var(--color-text-primary)}
+.logo-cn{font-size:11px;color:var(--color-text-secondary)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-link{font-size:13px;color:var(--color-text-secondary);cursor:pointer;text-decoration:none}
+.nav-link:hover{color:var(--color-text-primary)}
+.btn-p{background:#1D9E75;color:white;border:none;padding:8px 20px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;font-weight:500}
+.btn-p:hover{background:#0F6E56}
+.btn-o{background:transparent;border:0.5px solid var(--color-border-secondary);color:var(--color-text-primary);padding:8px 20px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer}
+.btn-o:hover{background:var(--color-background-secondary)}
+.hero{padding:4rem 2rem;text-align:center;max-width:680px;margin:0 auto}
+.badge{display:inline-block;background:#E1F5EE;color:#0F6E56;font-size:12px;padding:4px 12px;border-radius:20px;margin-bottom:1.5rem;font-weight:500}
+.hero h1{font-size:32px;font-weight:500;color:var(--color-text-primary);line-height:1.3;margin-bottom:1rem}
+.hero h1 span{color:#1D9E75}
+.hero p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.hero-note{font-size:12px;color:var(--color-text-tertiary)}
+.section{padding:3rem 2rem;border-top:0.5px solid var(--color-border-tertiary)}
+.sec-label{font-size:12px;color:#1D9E75;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.sec-title{font-size:22px;font-weight:500;color:var(--color-text-primary);margin-bottom:.75rem}
+.sec-desc{font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:2rem;max-width:520px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem}
+.step-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem}
+.step-num{width:28px;height:28px;background:#E1F5EE;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#0F6E56;margin-bottom:.75rem}
+.step-card h3{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.step-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.feat{display:flex;gap:10px;align-items:flex-start}
+.feat-icon{width:36px;height:36px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.feat-icon i{font-size:18px;color:#1D9E75}
+.feat h3{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.feat p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.ind-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+.ind-tag{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:6px 14px;font-size:13px;color:var(--color-text-secondary)}
+.ind-tag.on{background:#E1F5EE;color:#0F6E56;border-color:#9FE1CB}
+.demo-wrap{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.5rem}
+.sel-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+.sel-btn{padding:6px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);color:var(--color-text-secondary)}
+.sel-btn.on{background:#1D9E75;color:white;border-color:#1D9E75}
+.tab-row{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab-btn{padding:6px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);color:var(--color-text-secondary)}
+.tab-btn.on{background:#1D9E75;color:white;border-color:#1D9E75}
+.passport{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.pp-head{background:#1D9E75;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem}
+.pp-head h2{font-size:16px;font-weight:500;color:white;margin-bottom:4px}
+.pp-head p{font-size:12px;color:rgba(255,255,255,.75)}
+.pp-id{text-align:right}
+.id-lbl{font-size:11px;color:rgba(255,255,255,.6)}
+.id-val{font-size:13px;color:white;font-weight:500;font-family:var(--font-mono)}
+.pp-body{padding:1.25rem 1.5rem}
+.ps{margin-bottom:1.25rem}
+.ps-title{font-size:11px;font-weight:500;color:#1D9E75;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.pf{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 10px}
+.fl{font-size:11px;color:var(--color-text-tertiary);margin-bottom:2px}
+.fv{font-size:13px;color:var(--color-text-primary);font-weight:500}
+.bar{height:6px;border-radius:3px;background:var(--color-background-secondary);overflow:hidden;margin-top:4px;border:0.5px solid var(--color-border-tertiary)}
+.fill{height:100%;border-radius:3px;background:#1D9E75}
+.row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.row:last-child{border-bottom:none}
+.rn{font-size:13px;color:var(--color-text-primary)}
+.rv{font-size:13px;font-weight:500;color:var(--color-text-secondary)}
+.cert-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.cert-row:last-child{border-bottom:none}
+.cbadge{width:20px;height:20px;background:#E1F5EE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cbadge i{font-size:12px;color:#0F6E56}
+.cname{font-size:13px;color:var(--color-text-primary)}
+.cexp{margin-left:auto;font-size:11px;color:var(--color-text-tertiary)}
+.cstat{margin-left:8px;font-size:11px;background:#E1F5EE;color:#0F6E56;padding:2px 8px;border-radius:10px;white-space:nowrap}
+.tc{display:none}.tc.on{display:block}
+.prod-hero{display:grid;grid-template-columns:180px 1fr;gap:1.5rem;margin-bottom:1.5rem;align-items:start}
+.prod-img{border-radius:var(--border-radius-lg);overflow:hidden;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-meta h3{font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.prod-meta p{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:12px}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptag{font-size:11px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:3px 10px;color:var(--color-text-secondary)}
+.ptag.g{background:#E1F5EE;color:#0F6E56;border-color:#9FE1CB}
+.ok{color:#0F6E56}.warn{color:#BA7517}
+.contact-sec{background:var(--color-background-secondary);padding:2rem;border-radius:var(--border-radius-lg)}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;align-items:center}
+.ci h3{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:.5rem}
+.ci p{font-size:14px;color:var(--color-text-secondary);line-height:1.7}
+.c-items{display:flex;flex-direction:column;gap:10px}
+.c-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary)}
+.c-item i{font-size:16px;color:#1D9E75}
+.footer{padding:2rem;border-top:0.5px solid var(--color-border-tertiary);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fl2{font-size:13px;color:var(--color-text-secondary)}
+.flinks{display:flex;gap:1.5rem}
+.flink{font-size:12px;color:var(--color-text-tertiary);text-decoration:none}
+@media(max-width:500px){.prod-hero{grid-template-columns:1fr}.prod-img{max-width:180px}}
+</style>
 
-        <div>
-          <div class="logo-title">GreenLean 格林链</div>
-          <div class="logo-sub">欧盟数字产品护照服务平台</div>
-        </div>
-      </div>
+<h2 class="sr-only">GreenLean 格林链 — 欧盟数字产品护照服务平台</h2>
 
-      <div class="nav-links">
-        <a href="#about">什么是 DPP</a>
-        <a href="#service">服务内容</a>
-        <a href="#demo">产品演示</a>
-        <a href="#contact">联系我们</a>
-      </div>
+<nav class="nav">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L14 5.5V12.5L9 16L4 12.5V5.5L9 2Z" stroke="white" stroke-width="1.5" fill="none"/><path d="M6 9L8.5 11.5L12.5 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
     </div>
-  </nav>
-
-  <section class="hero">
-    <div class="container">
-      <div class="badge">
-        <i class="ti ti-shield-check"></i>
-        欧盟 ESPR 合规服务
-      </div>
-
-      <h1>
-        帮助中国工厂<br>
-        <span>顺利进入欧盟市场</span>
-      </h1>
-
-      <p>
-        欧盟数字产品护照（DPP）将逐步成为出口欧洲的重要要求。
-        GreenLean 提供从产品数据整理、标准化建模，到二维码生成与 DPP 展示的一站式服务。
-      </p>
-
-      <div class="hero-btns">
-        <button class="btn btn-primary" onclick="scrollToSection('demo')">
-          查看产品演示
-        </button>
-
-        <button class="btn" onclick="scrollToSection('contact')">
-          免费咨询
-        </button>
-      </div>
+    <div>
+      <div class="logo-en">GreenLean <span style="color:#1D9E75">格林链</span></div>
+      <div class="logo-cn">数字产品护照服务平台</div>
     </div>
-  </section>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" onclick="goTo('what')">什么是DPP</a>
+    <a class="nav-link" onclick="goTo('service')">服务内容</a>
+    <a class="nav-link" onclick="goTo('demo')">产品演示</a>
+    <button class="btn-p" onclick="goTo('contact')">立即咨询</button>
+  </div>
+</nav>
 
-  <section class="section" id="about">
-    <div class="container">
-      <h2 class="section-title">什么是欧盟 DPP？</h2>
+<div class="hero">
+  <div class="badge"><i class="ti ti-shield-check" aria-hidden="true"></i> 欧盟ESPR合规认证服务</div>
+  <h1>帮助中国工厂<br><span>顺利进入欧盟市场</span></h1>
+  <p>欧盟数字产品护照（DPP）将于2027年起强制实施。我们提供从数据采集到护照生成的一站式合规服务，助力中国出口企业提前布局。</p>
+  <div class="hero-btns">
+    <button class="btn-p" onclick="goTo('demo')"><i class="ti ti-eye" aria-hidden="true"></i> 查看产品演示</button>
+    <button class="btn-o" onclick="goTo('contact')">免费咨询评估</button>
+  </div>
+  <div class="hero-note">纺织服装 · 电子电器 · 电池 · 更多行业持续覆盖中</div>
+</div>
 
-      <p class="section-desc">
-        DPP（Digital Product Passport）是欧盟《ESPR生态设计法规》中的核心机制。
-        企业需要向供应链与消费者披露产品材料、碳排放、可回收性、供应链来源等数据。
-      </p>
+<div class="section" id="what">
+  <div class="sec-label">背景介绍</div>
+  <div class="sec-title">什么是欧盟数字产品护照？</div>
+  <div class="sec-desc">DPP（Digital Product Passport）是欧盟《生态设计法规》（ESPR）的核心要求。产品须通过二维码或RFID，向供应链各方披露材料成分、碳排放、可回收性等数据。</div>
+  <div class="steps">
+    <div class="step-card"><div class="step-num">1</div><h3>数据采集</h3><p>系统化收集产品材料、工艺、供应商等关键数据</p></div>
+    <div class="step-card"><div class="step-num">2</div><h3>标准化建模</h3><p>按照欧盟ESPR标准生成JSON结构化护照数据</p></div>
+    <div class="step-card"><div class="step-num">3</div><h3>护照发布</h3><p>生成唯一二维码，支持采购商与监管机构扫码查验</p></div>
+    <div class="step-card"><div class="step-num">4</div><h3>持续合规</h3><p>年度数据更新与法规变更跟踪，保障长期合规</p></div>
+  </div>
+</div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-database"></i>
-          </div>
-          <h3>数据采集</h3>
-          <p>系统整理产品材料、供应商、工艺与检测数据。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-braces"></i>
-          </div>
-          <h3>标准化建模</h3>
-          <p>根据欧盟标准生成结构化 DPP 数据。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-qrcode"></i>
-          </div>
-          <h3>二维码护照</h3>
-          <p>生成可扫码访问的数字产品护照页面。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-refresh"></i>
-          </div>
-          <h3>持续合规</h3>
-          <p>法规更新追踪与年度数据维护服务。</p>
-        </div>
-      </div>
+<div class="section" id="service">
+  <div class="sec-label">我们的服务</div>
+  <div class="sec-title">专注中国出口企业的DPP服务商</div>
+  <div class="sec-desc">深度理解中国供应链结构，提供符合欧盟标准的本土化合规解决方案。</div>
+  <div class="features">
+    <div class="feat"><div class="feat-icon"><i class="ti ti-file-text" aria-hidden="true"></i></div><div><h3>合规诊断</h3><p>评估企业现有数据与欧盟要求的差距，制定补齐方案</p></div></div>
+    <div class="feat"><div class="feat-icon"><i class="ti ti-database" aria-hidden="true"></i></div><div><h3>数据标准化</h3><p>按ESPR标准完成产品数据的结构化建模与JSON生成</p></div></div>
+    <div class="feat"><div class="feat-icon"><i class="ti ti-qrcode" aria-hidden="true"></i></div><div><h3>护照发布</h3><p>生成可扫码的数字产品护照，面向采购商与消费者开放查验</p></div></div>
+    <div class="feat"><div class="feat-icon"><i class="ti ti-refresh" aria-hidden="true"></i></div><div><h3>年度维护</h3><p>跟踪法规更新，按需更新护照数据，保持持续合规</p></div></div>
+  </div>
+  <div style="margin-top:2rem">
+    <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:.75rem">当前重点服务行业</div>
+    <div class="ind-tags">
+      <span class="ind-tag on">纺织服装</span>
+      <span class="ind-tag on">电子电器</span>
+      <span class="ind-tag on">电池</span>
+      <span class="ind-tag">家居地板</span>
+      <span class="ind-tag">钢铁金属</span>
+      <span class="ind-tag">家具</span>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="section" id="service">
-    <div class="container">
-      <h2 class="section-title">我们提供什么服务？</h2>
-
-      <p class="section-desc">
-        我们专注中国出口企业的 DPP 与 ESG 数据服务，尤其聚焦纺织、五金、电子等行业。
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-file-search"></i>
-          </div>
-          <h3>合规诊断</h3>
-          <p>分析企业现有数据结构与欧盟要求之间的差距。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-json"></i>
-          </div>
-          <h3>JSON 数据生成</h3>
-          <p>输出符合 DPP 逻辑的结构化标准数据。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-world"></i>
-          </div>
-          <h3>DPP 展示页面</h3>
-          <p>支持中英双语产品护照展示页面搭建。</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="ti ti-chart-bar"></i>
-          </div>
-          <h3>ESG / 碳数据</h3>
-          <p>帮助企业逐步建立碳排放与环境指标体系。</p>
-        </div>
-      </div>
+<div class="section" id="demo">
+  <div class="sec-label">产品演示</div>
+  <div class="sec-title">数字产品护照示例</div>
+  <div class="sec-desc">选择行业类别，查看对应的DPP护照示例，了解采购商与消费者扫码后可查阅的完整信息内容。</div>
+  <div class="demo-wrap">
+    <div class="sel-row">
+      <button class="sel-btn on" onclick="switchDemo('t',this)"><i class="ti ti-shirt" aria-hidden="true"></i> 纺织服装</button>
+      <button class="sel-btn" onclick="switchDemo('h',this)"><i class="ti ti-tool" aria-hidden="true"></i> 不锈钢五金件</button>
     </div>
-  </section>
 
-  <section class="section" id="demo">
-    <div class="container">
-      <h2 class="section-title">数字产品护照示例</h2>
-
-      <p class="section-desc">
-        以下为纺织行业 DPP 页面示例，采购商或监管机构可通过二维码查看完整产品信息。
-      </p>
-
-      <div class="demo">
-        <div class="passport">
-          <div class="passport-head">
-            <div>
-              <h3>有机棉针织 T 恤</h3>
-              <p>Qingdao Green Textile Co., Ltd.</p>
+    <!-- TEXTILE DEMO -->
+    <div id="demo-t">
+      <div class="tab-row">
+        <button class="tab-btn on" onclick="sw('t','ov',this)">产品概览</button>
+        <button class="tab-btn" onclick="sw('t','mat',this)">材料成分</button>
+        <button class="tab-btn" onclick="sw('t','chain',this)">供应链溯源</button>
+        <button class="tab-btn" onclick="sw('t','env',this)">环境指标</button>
+        <button class="tab-btn" onclick="sw('t','dur',this)">耐久性测试</button>
+        <button class="tab-btn" onclick="sw('t','cert',this)">认证合规</button>
+      </div>
+      <div class="passport">
+        <div class="pp-head">
+          <div><h2>有机棉针织T恤 — 基础款</h2><p>青岛绿源纺织有限公司 · SKU-TX-2024-001</p></div>
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="pp-id"><div class="id-lbl">护照编号</div><div class="id-val">DPP-CN-2024-TX-00127</div><div class="id-lbl" style="margin-top:4px">有效期至 2026-12-31</div></div>
+            <div style="width:56px;height:56px;background:white;border-radius:6px;padding:4px;flex-shrink:0">
+              <svg viewBox="0 0 70 70" width="100%" height="100%"><rect x="2" y="2" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="5" y="5" width="14" height="14" rx="1" fill="white"/><rect x="7" y="7" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="48" y="2" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="51" y="5" width="14" height="14" rx="1" fill="white"/><rect x="53" y="7" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="2" y="48" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="5" y="51" width="14" height="14" rx="1" fill="white"/><rect x="7" y="53" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="26" y="5" width="4" height="4" fill="#1D9E75"/><rect x="32" y="5" width="6" height="4" fill="#1D9E75"/><rect x="40" y="5" width="4" height="4" fill="#1D9E75"/><rect x="26" y="11" width="6" height="4" fill="#1D9E75"/><rect x="36" y="11" width="4" height="6" fill="#1D9E75"/><rect x="26" y="18" width="4" height="4" fill="#1D9E75"/><rect x="34" y="18" width="8" height="4" fill="#1D9E75"/><rect x="26" y="26" width="18" height="4" fill="#1D9E75"/><rect x="48" y="26" width="4" height="6" fill="#1D9E75"/><rect x="54" y="26" width="14" height="4" fill="#1D9E75"/><rect x="2" y="26" width="18" height="4" fill="#1D9E75"/><rect x="26" y="32" width="6" height="6" fill="#1D9E75"/><rect x="36" y="32" width="4" height="4" fill="#1D9E75"/><rect x="44" y="32" width="8" height="4" fill="#1D9E75"/><rect x="56" y="32" width="12" height="4" fill="#1D9E75"/><rect x="2" y="34" width="8" height="4" fill="#1D9E75"/><rect x="14" y="34" width="6" height="4" fill="#1D9E75"/><rect x="26" y="40" width="12" height="4" fill="#1D9E75"/><rect x="42" y="38" width="4" height="8" fill="#1D9E75"/><rect x="50" y="40" width="6" height="4" fill="#1D9E75"/><rect x="60" y="38" width="8" height="6" fill="#1D9E75"/><rect x="2" y="40" width="4" height="4" fill="#1D9E75"/><rect x="10" y="40" width="8" height="4" fill="#1D9E75"/><rect x="26" y="48" width="8" height="4" fill="#1D9E75"/><rect x="38" y="48" width="4" height="8" fill="#1D9E75"/><rect x="46" y="50" width="6" height="4" fill="#1D9E75"/><rect x="56" y="48" width="12" height="4" fill="#1D9E75"/><rect x="26" y="56" width="4" height="8" fill="#1D9E75"/><rect x="34" y="58" width="6" height="6" fill="#1D9E75"/><rect x="44" y="56" width="8" height="4" fill="#1D9E75"/><rect x="56" y="56" width="4" height="8" fill="#1D9E75"/><rect x="64" y="58" width="4" height="6" fill="#1D9E75"/></svg>
             </div>
+          </div>
+        </div>
+        <div class="pp-body">
 
-            <div>
-              DPP-CN-2025-TX-00127
+          <div id="t-ov" class="tc on">
+            <div class="prod-hero">
+              <div class="prod-img">
+                <img src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=400" alt="有机棉T恤产品图" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 100 100\' width=\'80\' height=\'80\'><path d=\'M30 25 L20 40 L35 45 L35 80 L65 80 L65 45 L80 40 L70 25 L55 30 Q50 20 45 30 Z\' fill=\'#9FE1CB\' stroke=\'#5DCAA5\' stroke-width=\'1\'/></svg>'"/>
+              </div>
+              <div class="prod-meta">
+                <h3>有机棉针织T恤（基础款）</h3>
+                <p>采用GOTS认证有机棉纱线，天然低温染色，适合对皮肤敏感人群及注重可持续消费的欧洲市场。符合欧盟纺织品生态标签（EU Ecolabel）标准。</p>
+                <div class="ptags">
+                  <span class="ptag g">GOTS认证</span>
+                  <span class="ptag g">OEKO-TEX 100</span>
+                  <span class="ptag g">EU Ecolabel</span>
+                  <span class="ptag g">REACH合规</span>
+                  <span class="ptag">低碳生产</span>
+                </div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">基本信息</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">产品类别</div><div class="fv">针织上衣</div></div>
+                <div class="pf"><div class="fl">HS编码</div><div class="fv">6109.10.00</div></div>
+                <div class="pf"><div class="fl">EU商品分类</div><div class="fv">CN 6109 10 10</div></div>
+                <div class="pf"><div class="fl">原产地</div><div class="fv">中国·山东青岛</div></div>
+                <div class="pf"><div class="fl">目标市场</div><div class="fv">欧盟·德国</div></div>
+                <div class="pf"><div class="fl">品牌客户</div><div class="fv">EcoWear GmbH</div></div>
+                <div class="pf"><div class="fl">生产年份</div><div class="fv">2024</div></div>
+                <div class="pf"><div class="fl">单件净重</div><div class="fv">185 g</div></div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">护理说明</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">洗涤温度</div><div class="fv">≤30°C 冷洗</div></div>
+                <div class="pf"><div class="fl">烘干方式</div><div class="fv">低温滚筒</div></div>
+                <div class="pf"><div class="fl">漂白</div><div class="fv">不可漂白</div></div>
+                <div class="pf"><div class="fl">熨烫</div><div class="fv">低温 ≤110°C</div></div>
+                <div class="pf"><div class="fl">干洗</div><div class="fv">不推荐</div></div>
+                <div class="pf"><div class="fl">晾晒</div><div class="fv">阴干平铺</div></div>
+              </div>
             </div>
           </div>
 
-          <div class="passport-body">
-            <div class="info-grid">
-              <div class="info-item">
-                <div class="info-label">产品类别</div>
-                <div class="info-value">针织服装</div>
+          <div id="t-mat" class="tc">
+            <div class="ps"><div class="ps-title">纤维成分</div>
+              <div class="row"><span class="rn">有机棉（GOTS认证，新疆长绒棉）</span><span class="rv">95%</span></div>
+              <div class="row"><span class="rn">莱卡弹性纤维（Lycra® INVISTA）</span><span class="rv">5%</span></div>
+            </div>
+            <div class="ps"><div class="ps-title">染色与整理工艺</div>
+              <div class="row"><span class="rn">染色方式</span><span class="rv">活性染料低温染色</span></div>
+              <div class="row"><span class="rn">染色温度</span><span class="rv">40°C（节能低温工艺）</span></div>
+              <div class="row"><span class="rn">固色剂</span><span class="rv">无甲醛型固色剂</span></div>
+              <div class="row"><span class="rn">后整理</span><span class="rv">柔软剂（可生物降解）</span></div>
+              <div class="row"><span class="rn">印花工艺</span><span class="rv">水性颜料印花（无苯无酮）</span></div>
+              <div class="row"><span class="rn">面料克重</span><span class="rv">180 g/m²</span></div>
+            </div>
+            <div class="ps"><div class="ps-title">有害物质检测（SGS报告）</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">SVHC高关注物质</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">偶氮染料（致癌）</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">甲醛含量</div><div class="fv ok">16 mg/kg（限值75）</div></div>
+                <div class="pf"><div class="fl">重金属（8项）</div><div class="fv ok">全部低于限值</div></div>
+                <div class="pf"><div class="fl">农残（有机磷）</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">pH值</div><div class="fv ok">5.8（符合4.0-7.5）</div></div>
+                <div class="pf"><div class="fl">镍析出</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">荧光增白剂</div><div class="fv ok">未检出</div></div>
               </div>
+            </div>
+          </div>
 
-              <div class="info-item">
-                <div class="info-label">材料组成</div>
-                <div class="info-value">95% 有机棉</div>
+          <div id="t-chain" class="tc">
+            <div class="ps"><div class="ps-title">供应链各级信息</div>
+              <div class="row"><span class="rn">第一级 — 棉花种植</span><span class="rv ok">新疆农业合作社（GOTS认证农场）</span></div>
+              <div class="row"><span class="rn">第二级 — 纺纱</span><span class="rv">山东如意科技集团</span></div>
+              <div class="row"><span class="rn">第三级 — 针织面料</span><span class="rv">青岛绿源纺织有限公司</span></div>
+              <div class="row"><span class="rn">第四级 — 染色</span><span class="rv">青岛鸿源染整（GOTS认证染厂）</span></div>
+              <div class="row"><span class="rn">第五级 — 成衣缝制</span><span class="rv">青岛绿源纺织有限公司</span></div>
+              <div class="row"><span class="rn">第六级 — 品控检测</span><span class="rv">SGS上海实验室</span></div>
+              <div class="row"><span class="rn">第七级 — 出口物流</span><span class="rv">青岛港 → 汉堡港</span></div>
+            </div>
+            <div class="ps"><div class="ps-title">产地溯源信息</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">棉花产地</div><div class="fv">新疆·阿克苏</div></div>
+                <div class="pf"><div class="fl">纺纱产地</div><div class="fv">山东·济宁</div></div>
+                <div class="pf"><div class="fl">成衣产地</div><div class="fv">山东·青岛</div></div>
+                <div class="pf"><div class="fl">出口口岸</div><div class="fv">青岛港</div></div>
+                <div class="pf"><div class="fl">入境口岸</div><div class="fv">德国汉堡港</div></div>
+                <div class="pf"><div class="fl">最终销售地</div><div class="fv">德国·柏林</div></div>
               </div>
+            </div>
+            <div class="ps"><div class="ps-title">社会责任声明</div>
+              <div class="row"><span class="rn">劳工标准</span><span class="rv ok">符合SA8000社会责任标准</span></div>
+              <div class="row"><span class="rn">最低工资合规</span><span class="rv ok">高于当地法定最低工资</span></div>
+              <div class="row"><span class="rn">童工声明</span><span class="rv ok">无童工使用</span></div>
+              <div class="row"><span class="rn">强迫劳动声明</span><span class="rv ok">无强迫劳动</span></div>
+              <div class="row"><span class="rn">工作时长</span><span class="rv ok">符合当地劳动法规定</span></div>
+            </div>
+          </div>
 
-              <div class="info-item">
-                <div class="info-label">REACH 合规</div>
-                <div class="info-value">已通过</div>
+          <div id="t-env" class="tc">
+            <div class="ps"><div class="ps-title">碳足迹（全生命周期 LCA）</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">原材料阶段</div><div class="fv">1.8 kg CO₂e</div><div class="bar"><div class="fill" style="width:56%"></div></div></div>
+                <div class="pf"><div class="fl">生产加工阶段</div><div class="fv">0.9 kg CO₂e</div><div class="bar"><div class="fill" style="width:28%"></div></div></div>
+                <div class="pf"><div class="fl">运输物流阶段</div><div class="fv">0.5 kg CO₂e</div><div class="bar"><div class="fill" style="width:16%"></div></div></div>
+                <div class="pf"><div class="fl">合计碳排放</div><div class="fv">3.2 kg CO₂e</div><div class="bar"><div class="fill" style="width:45%"></div></div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:4px">行业均值 7.1 kg</div></div>
               </div>
+            </div>
+            <div class="ps"><div class="ps-title">能源与水资源</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">可再生能源占比</div><div class="fv">68%</div><div class="bar"><div class="fill" style="width:68%"></div></div></div>
+                <div class="pf"><div class="fl">生产用水量</div><div class="fv">42 L/件</div><div class="bar"><div class="fill" style="width:40%"></div></div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:4px">行业均值 100 L</div></div>
+                <div class="pf"><div class="fl">废水循环利用率</div><div class="fv">78%</div><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+                <div class="pf"><div class="fl">废水达标排放</div><div class="fv ok">符合GB 4287</div></div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">循环经济指标</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">可回收率</div><div class="fv">82%</div><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+                <div class="pf"><div class="fl">可生物降解率</div><div class="fv">95%（棉纤维部分）</div></div>
+                <div class="pf"><div class="fl">包装可回收</div><div class="fv ok">100%可回收纸袋</div></div>
+                <div class="pf"><div class="fl">回收建议</div><div class="fv">纺织品回收箱</div></div>
+              </div>
+            </div>
+          </div>
 
-              <div class="info-item">
-                <div class="info-label">碳排放</div>
-                <div class="info-value">3.2 kg CO₂e</div>
+          <div id="t-dur" class="tc">
+            <div class="ps"><div class="ps-title">耐久性与质量测试（GB/T & ISO标准）</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">水洗色牢度（ISO 105-C06）</div><div class="fv ok">4级（优秀）</div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                <div class="pf"><div class="fl">摩擦色牢度 干（ISO 105-X12）</div><div class="fv ok">4-5级</div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                <div class="pf"><div class="fl">摩擦色牢度 湿</div><div class="fv ok">3-4级</div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+                <div class="pf"><div class="fl">耐汗渍牢度（ISO 105-E04）</div><div class="fv ok">4级</div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                <div class="pf"><div class="fl">起毛起球（ISO 12945-2）</div><div class="fv ok">4级（不起球）</div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                <div class="pf"><div class="fl">破裂强力（ISO 13938）</div><div class="fv ok">320 kPa（符合）</div><div class="bar"><div class="fill" style="width:75%"></div></div></div>
               </div>
+            </div>
+            <div class="ps"><div class="ps-title">尺寸稳定性</div>
+              <div class="row"><span class="rn">水洗收缩率（纵向）</span><span class="rv ok">-2.1%（限值±5%）</span></div>
+              <div class="row"><span class="rn">水洗收缩率（横向）</span><span class="rv ok">-1.8%（限值±5%）</span></div>
+              <div class="row"><span class="rn">预期洗涤寿命</span><span class="rv">50次以上</span></div>
+              <div class="row"><span class="rn">耐久性综合评级</span><span class="rv ok">A级（优秀）</span></div>
+            </div>
+          </div>
 
-              <div class="info-item">
-                <div class="info-label">目标市场</div>
-                <div class="info-value">德国 / 欧盟</div>
+          <div id="t-cert" class="tc">
+            <div class="ps"><div class="ps-title">产品认证</div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">GOTS 全球有机纺织品标准 v6.0</span><span class="cexp">2025-08到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">OEKO-TEX Standard 100 Class I</span><span class="cexp">2025-06到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">EU Ecolabel 欧盟生态标签（纺织品）</span><span class="cexp">2026-02到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">SA8000 社会责任管理体系</span><span class="cexp">2025-10到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">ISO 14001 环境管理体系</span><span class="cexp">2026-03到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">EU REACH合规声明</span><span class="cexp">长期有效</span><span class="cstat">合规</span></div>
+            </div>
+            <div class="ps"><div class="ps-title">护照数据核验</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">数据服务商</div><div class="fv">GreenLean 格林链</div></div>
+                <div class="pf"><div class="fl">数据完整度</div><div class="fv">96%</div><div class="bar"><div class="fill" style="width:96%"></div></div></div>
+                <div class="pf"><div class="fl">最近更新</div><div class="fv">2024-11-15</div></div>
+                <div class="pf"><div class="fl">下次审核</div><div class="fv">2025-11-15</div></div>
               </div>
+            </div>
+          </div>
 
-              <div class="info-item">
-                <div class="info-label">数据状态</div>
-                <div class="info-value">已验证</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HARDWARE DEMO -->
+    <div id="demo-h" style="display:none">
+      <div class="tab-row">
+        <button class="tab-btn on" onclick="sw('h','ov',this)">产品概览</button>
+        <button class="tab-btn" onclick="sw('h','mat',this)">材料与工艺</button>
+        <button class="tab-btn" onclick="sw('h','env',this)">环境指标</button>
+        <button class="tab-btn" onclick="sw('h','cert',this)">认证信息</button>
+        <button class="tab-btn" onclick="sw('h','safe',this)">安全合规</button>
+      </div>
+      <div class="passport">
+        <div class="pp-head">
+          <div><h2>304不锈钢六角法兰螺栓 M10×50</h2><p>青岛鑫达紧固件有限公司 · SKU-HW-2024-038</p></div>
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="pp-id"><div class="id-lbl">护照编号</div><div class="id-val">DPP-CN-2024-HW-00389</div><div class="id-lbl" style="margin-top:4px">有效期至 2026-12-31</div></div>
+            <div style="width:56px;height:56px;background:white;border-radius:6px;padding:4px;flex-shrink:0">
+              <svg viewBox="0 0 70 70" width="100%" height="100%"><rect x="2" y="2" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="5" y="5" width="14" height="14" rx="1" fill="white"/><rect x="7" y="7" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="48" y="2" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="51" y="5" width="14" height="14" rx="1" fill="white"/><rect x="53" y="7" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="2" y="48" width="20" height="20" rx="2" fill="#1D9E75"/><rect x="5" y="51" width="14" height="14" rx="1" fill="white"/><rect x="7" y="53" width="10" height="10" rx="1" fill="#1D9E75"/><rect x="30" y="4" width="6" height="6" fill="#1D9E75"/><rect x="40" y="4" width="4" height="4" fill="#1D9E75"/><rect x="26" y="12" width="8" height="4" fill="#1D9E75"/><rect x="38" y="10" width="6" height="6" fill="#1D9E75"/><rect x="28" y="20" width="4" height="4" fill="#1D9E75"/><rect x="36" y="18" width="8" height="4" fill="#1D9E75"/><rect x="26" y="26" width="16" height="4" fill="#1D9E75"/><rect x="46" y="24" width="6" height="6" fill="#1D9E75"/><rect x="54" y="26" width="14" height="4" fill="#1D9E75"/><rect x="2" y="28" width="16" height="4" fill="#1D9E75"/><rect x="26" y="34" width="8" height="4" fill="#1D9E75"/><rect x="38" y="32" width="4" height="8" fill="#1D9E75"/><rect x="46" y="34" width="8" height="4" fill="#1D9E75"/><rect x="58" y="32" width="10" height="6" fill="#1D9E75"/><rect x="4" y="36" width="6" height="4" fill="#1D9E75"/><rect x="14" y="34" width="6" height="6" fill="#1D9E75"/><rect x="28" y="42" width="10" height="4" fill="#1D9E75"/><rect x="44" y="40" width="4" height="8" fill="#1D9E75"/><rect x="52" y="42" width="8" height="4" fill="#1D9E75"/><rect x="64" y="40" width="4" height="8" fill="#1D9E75"/><rect x="2" y="42" width="8" height="4" fill="#1D9E75"/><rect x="26" y="50" width="6" height="6" fill="#1D9E75"/><rect x="36" y="52" width="4" height="4" fill="#1D9E75"/><rect x="44" y="50" width="8" height="4" fill="#1D9E75"/><rect x="56" y="50" width="4" height="8" fill="#1D9E75"/><rect x="64" y="52" width="4" height="6" fill="#1D9E75"/><rect x="28" y="58" width="8" height="6" fill="#1D9E75"/><rect x="40" y="60" width="6" height="4" fill="#1D9E75"/><rect x="50" y="58" width="6" height="6" fill="#1D9E75"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="pp-body">
+          <div id="h-ov" class="tc on">
+            <div class="prod-hero">
+              <div class="prod-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Stainless_steel_bolt.jpg/320px-Stainless_steel_bolt.jpg" alt="304不锈钢螺栓" onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 100 100\' width=\'80\' height=\'80\'><rect x=\'38\' y=\'20\' width=\'24\' height=\'16\' rx=\'1\' fill=\'#5DCAA5\'/><rect x=\'20\' y=\'35\' width=\'60\' height=\'18\' rx=\'2\' fill=\'#9FE1CB\'/><rect x=\'42\' y=\'53\' width=\'16\' height=\'28\' rx=\'1\' fill=\'#5DCAA5\'/></svg>'"/>
               </div>
+              <div class="prod-meta">
+                <h3>304不锈钢六角法兰螺栓</h3>
+                <p>适用于建筑幕墙、家具组装及工业设备安装。高强度耐腐蚀，符合欧盟RoHS及REACH指令，出口德国、意大利等市场。</p>
+                <div class="ptags">
+                  <span class="ptag g">REACH合规</span><span class="ptag g">RoHS合规</span><span class="ptag g">CE认证</span><span class="ptag">ISO 3506</span><span class="ptag">DIN 6921</span>
+                </div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">基本规格</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">产品类别</div><div class="fv">紧固件·螺栓</div></div>
+                <div class="pf"><div class="fl">HS编码</div><div class="fv">7318.15.90</div></div>
+                <div class="pf"><div class="fl">规格型号</div><div class="fv">M10×50 mm</div></div>
+                <div class="pf"><div class="fl">螺纹标准</div><div class="fv">ISO 261 粗牙</div></div>
+                <div class="pf"><div class="fl">头部形式</div><div class="fv">六角法兰头</div></div>
+                <div class="pf"><div class="fl">表面处理</div><div class="fv">电解抛光</div></div>
+                <div class="pf"><div class="fl">抗拉强度</div><div class="fv">700 MPa</div></div>
+                <div class="pf"><div class="fl">单件重量</div><div class="fv">28.4 g</div></div>
+              </div>
+            </div>
+          </div>
+          <div id="h-mat" class="tc">
+            <div class="ps"><div class="ps-title">材料组成与化学成分</div>
+              <div class="row"><span class="rn">304奥氏体不锈钢（主体）</span><span class="rv">100%</span></div>
+            </div>
+            <div class="ps"><div class="ps-title">实测化学成分</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">铬 Cr</div><div class="fv">18.2%</div><div class="bar"><div class="fill" style="width:91%"></div></div></div>
+                <div class="pf"><div class="fl">镍 Ni</div><div class="fv">8.1%</div><div class="bar"><div class="fill" style="width:81%"></div></div></div>
+                <div class="pf"><div class="fl">碳 C</div><div class="fv">≤0.08%</div><div class="bar"><div class="fill" style="width:8%"></div></div></div>
+                <div class="pf"><div class="fl">锰 Mn</div><div class="fv">≤2.0%</div><div class="bar"><div class="fill" style="width:20%"></div></div></div>
+                <div class="pf"><div class="fl">硅 Si</div><div class="fv">≤1.0%</div><div class="bar"><div class="fill" style="width:10%"></div></div></div>
+                <div class="pf"><div class="fl">铁 Fe</div><div class="fv">余量</div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">生产工艺</div>
+              <div class="row"><span class="rn">成型方式</span><span class="rv">冷镦成型（常温）</span></div>
+              <div class="row"><span class="rn">热处理</span><span class="rv">固溶退火 1050-1100°C</span></div>
+              <div class="row"><span class="rn">表面处理</span><span class="rv">电解抛光（EP级）</span></div>
+              <div class="row"><span class="rn">螺纹加工</span><span class="rv">滚压成型（无切削）</span></div>
+              <div class="row"><span class="rn">包装材料</span><span class="rv">可回收PE袋 + 纸箱</span></div>
+            </div>
+          </div>
+          <div id="h-env" class="tc">
+            <div class="ps"><div class="ps-title">碳足迹分析（每千件）</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">原材料阶段</div><div class="fv">18.4 kg CO₂e</div><div class="bar"><div class="fill" style="width:60%"></div></div></div>
+                <div class="pf"><div class="fl">生产加工阶段</div><div class="fv">6.2 kg CO₂e</div><div class="bar"><div class="fill" style="width:20%"></div></div></div>
+                <div class="pf"><div class="fl">运输物流阶段</div><div class="fv">2.1 kg CO₂e</div><div class="bar"><div class="fill" style="width:7%"></div></div></div>
+                <div class="pf"><div class="fl">合计排放</div><div class="fv">26.7 kg CO₂e</div><div class="bar"><div class="fill" style="width:50%"></div></div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:4px">行业均值 41 kg</div></div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">资源消耗与循环</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">可再生能源占比</div><div class="fv">42%</div><div class="bar"><div class="fill" style="width:42%"></div></div></div>
+                <div class="pf"><div class="fl">再生金属原料比</div><div class="fv">35%</div><div class="bar"><div class="fill" style="width:35%"></div></div></div>
+                <div class="pf"><div class="fl">生产废料回收率</div><div class="fv">98%</div><div class="bar"><div class="fill" style="width:98%"></div></div></div>
+                <div class="pf"><div class="fl">产品可回收率</div><div class="fv">100%</div><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+              </div>
+            </div>
+          </div>
+          <div id="h-cert" class="tc">
+            <div class="ps"><div class="ps-title">产品认证</div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">CE 标志（建筑产品法规 CPR）</span><span class="cexp">2026-06到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">ISO 3506 不锈钢紧固件标准</span><span class="cexp">2026-01到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">DIN 6921 法兰螺栓标准</span><span class="cexp">长期有效</span><span class="cstat">符合</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">SGS 第三方材质报告</span><span class="cexp">2025-03到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">ISO 9001:2015 质量管理体系</span><span class="cexp">2025-11到期</span><span class="cstat">有效</span></div>
+              <div class="cert-row"><div class="cbadge"><i class="ti ti-check" aria-hidden="true"></i></div><span class="cname">ISO 14001 环境管理体系</span><span class="cexp">2025-08到期</span><span class="cstat">有效</span></div>
+            </div>
+          </div>
+          <div id="h-safe" class="tc">
+            <div class="ps"><div class="ps-title">EU REACH合规</div>
+              <div class="pg">
+                <div class="pf"><div class="fl">SVHC高度关注物质</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">六价铬 Cr(VI)</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">铅 Pb</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">镉 Cd</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">汞 Hg</div><div class="fv ok">未检出</div></div>
+                <div class="pf"><div class="fl">镍析出量</div><div class="fv ok">&lt;0.5 μg/cm²/周</div></div>
+              </div>
+            </div>
+            <div class="ps"><div class="ps-title">安全使用说明</div>
+              <div class="row"><span class="rn">适用温度范围</span><span class="rv">-196°C ～ +800°C</span></div>
+              <div class="row"><span class="rn">最大扭紧力矩</span><span class="rv">48 N·m</span></div>
+              <div class="row"><span class="rn">盐雾测试</span><span class="rv ok">500h无锈蚀</span></div>
+              <div class="row"><span class="rn">预期使用寿命</span><span class="rv">25年以上</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="contact" id="contact">
-        <h2>提前布局 DPP，进入欧洲市场</h2>
-
-        <p>
-          欧盟 DPP 将逐步覆盖纺织、电子、电池、家具等行业。
-          现在开始建立数据体系，将比竞争对手更早进入合规阶段。
-        </p>
-
-        <div class="contact-links">
-          <div class="contact-item">
-            <i class="ti ti-world"></i>
-            www.greanlean.com
-          </div>
-
-          <div class="contact-item">
-            <i class="ti ti-phone"></i>
-            131-7981-6983
-          </div>
-
-          <div class="contact-item">
-            <i class="ti ti-brand-instagram"></i>
-            greanlean_dpp
-          </div>
-        </div>
+<div class="section" id="contact">
+  <div class="contact-sec">
+    <div class="cg">
+      <div class="ci">
+        <h3>准备好开始了吗？</h3>
+        <p>欧盟DPP 2027年起强制实施，现在开始准备，比竞争对手早一步。联系我们获取免费合规评估。</p>
+        <button class="btn-p" style="margin-top:1rem">免费咨询评估 →</button>
+      </div>
+      <div class="c-items">
+        <div class="c-item"><i class="ti ti-world" aria-hidden="true"></i> www.greanlean.com</div>
+        <div class="c-item"><i class="ti ti-phone" aria-hidden="true"></i> 131-7981-6983</div>
+        <div class="c-item"><i class="ti ti-map-pin" aria-hidden="true"></i> 青岛市 · 山东省</div>
+        <div class="c-item"><i class="ti ti-brand-instagram" aria-hidden="true"></i> Instagram：greanlean_dpp</div>
+        <div class="c-item"><i class="ti ti-music" aria-hidden="true"></i> 小红书：GreenLean格林链</div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <footer>
-    © 2026 GreenLean 格林链 ｜ 欧盟数字产品护照 DPP 服务商
-  </footer>
+<footer class="footer">
+  <div class="fl2">© 2024 青岛格林链数字科技有限公司 · GreenLean · 专注欧盟DPP合规服务</div>
+  <div class="flinks">
+    <a class="flink" href="#">隐私政策</a>
+    <a class="flink" href="#">服务条款</a>
+    <a class="flink" href="#">关于我们</a>
+  </div>
+</footer>
 
-  <script>
-    function scrollToSection(id) {
-      const el = document.getElementById(id)
-      if (el) {
-        el.scrollIntoView({
-          behavior: 'smooth'
-        })
-      }
-    }
-  </script>
+<script>
+function goTo(id){const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'})}
+function switchDemo(type,btn){
+  document.querySelectorAll('.sel-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('demo-t').style.display=type==='t'?'block':'none';
+  document.getElementById('demo-h').style.display=type==='h'?'block':'none';
+}
+function sw(prefix,tab,btn){
+  const panel=document.getElementById('demo-'+prefix);
+  panel.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  panel.querySelectorAll('.tc').forEach(c=>c.classList.remove('on'));
+  document.getElementById(prefix+'-'+tab).classList.add('on');
+}
+</script>
 
-</body>
+  </body>
+
 </html>
-
