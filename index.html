@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GreenLean 格林链｜欧盟数字产品护照 DPP 服务商，提供 DPP 数据整理、ESPR 合规、二维码生成、供应链溯源与数字护照展示服务。" />
-  <meta name="keywords" content="DPP, 数字产品护照, ESPR, 欧盟法规, 纺织DPP, Digital Product Passport" />
+
+  <meta name="description"
+    content="GreenLean 格林链｜欧盟数字产品护照 DPP 服务商，提供 DPP 数据整理、ESPR 合规、二维码生成、供应链溯源与数字护照展示服务。" />
+
+  <meta name="keywords"
+    content="DPP, 数字产品护照, ESPR, 欧盟法规, 纺织DPP, Digital Product Passport" />
 
   <title>GreenLean 格林链｜欧盟数字产品护照 DPP 服务商</title>
 
@@ -13,9 +18,9 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     :root {
@@ -26,11 +31,17 @@
       --text: #111827;
       --text-light: #6b7280;
       --border: #e5e7eb;
-      --radius: 16px;
+      --radius: 18px;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -51,17 +62,17 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.92);
+      z-index: 999;
+      background: rgba(255, 255, 255, .92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-wrap {
-      height: 72px;
+      height: 74px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
@@ -71,20 +82,22 @@
     }
 
     .logo-box {
-      width: 40px;
-      height: 40px;
-      background: var(--green);
+      width: 42px;
+      height: 42px;
       border-radius: 12px;
+      background: var(--green);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: white;
       font-size: 18px;
     }
 
     .logo-title {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .logo-sub {
@@ -99,8 +112,8 @@
     }
 
     .nav-links a {
-      font-size: 14px;
       color: var(--text-light);
+      font-size: 14px;
       transition: .2s;
     }
 
@@ -108,27 +121,8 @@
       color: var(--text);
     }
 
-    .btn {
-      border: none;
-      cursor: pointer;
-      transition: .2s;
-      border-radius: 12px;
-      padding: 12px 22px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--green-dark);
-    }
-
     .hero {
-      padding: 100px 0 80px;
+      padding: 110px 0 90px;
       text-align: center;
     }
 
@@ -136,20 +130,23 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #e7f7f1;
+
+      background: #E7F7F1;
       color: var(--green-dark);
+
       padding: 8px 16px;
       border-radius: 999px;
+
       font-size: 13px;
       font-weight: 600;
+
       margin-bottom: 28px;
     }
 
     .hero h1 {
-      font-size: 56px;
-      line-height: 1.2;
+      font-size: 60px;
+      line-height: 1.15;
       margin-bottom: 24px;
-      font-weight: 700;
     }
 
     .hero h1 span {
@@ -164,11 +161,33 @@
     }
 
     .hero-btns {
+      margin-top: 36px;
       display: flex;
       justify-content: center;
       gap: 16px;
-      margin-top: 36px;
       flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+
+      padding: 14px 24px;
+      border-radius: 14px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
     }
 
     .section {
@@ -176,9 +195,9 @@
     }
 
     .section-title {
-      font-size: 40px;
-      margin-bottom: 18px;
       text-align: center;
+      font-size: 42px;
+      margin-bottom: 18px;
     }
 
     .section-desc {
@@ -204,25 +223,29 @@
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .06);
     }
 
     .card-icon {
-      width: 52px;
-      height: 52px;
-      background: #eef9f5;
+      width: 54px;
+      height: 54px;
+
       border-radius: 14px;
+      background: #eef9f5;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+
       color: var(--green);
+      font-size: 24px;
+
       margin-bottom: 18px;
     }
 
     .card h3 {
-      font-size: 18px;
       margin-bottom: 10px;
+      font-size: 18px;
     }
 
     .card p {
@@ -239,18 +262,24 @@
 
     .passport {
       background: white;
-      border-radius: 22px;
+      border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--border);
-      margin-top: 32px;
     }
 
     .passport-head {
       background: var(--green);
-      padding: 28px;
       color: white;
+      padding: 30px;
+
       display: flex;
       justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .passport-top-right {
+      display: flex;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
@@ -258,6 +287,36 @@
 
     .passport-body {
       padding: 32px;
+    }
+
+    .dpp-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .product-tags {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .product-tag {
+      background: #E7F7F1;
+      color: #0F6E56;
+
+      padding: 6px 12px;
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .product-tag.gray {
+      background: #f3f4f6;
+      color: #374151;
     }
 
     .info-grid {
@@ -283,9 +342,55 @@
       font-weight: 600;
     }
 
+    .table-box {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .table-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .table-row + .table-row {
+      border-top: 1px solid var(--border);
+    }
+
+    .supply-chain-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .supply-chain-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 20px;
+
+      background: #f9fafb;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .json-box {
+      margin-top: 40px;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      overflow-x: auto;
+    }
+
+    .json-box pre {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
     .contact {
       background: var(--green);
       color: white;
+
       border-radius: 28px;
       padding: 56px;
       text-align: center;
@@ -299,7 +404,7 @@
     .contact p {
       max-width: 760px;
       margin: 0 auto;
-      opacity: .88;
+      opacity: .9;
     }
 
     .contact-links {
@@ -307,14 +412,17 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+
       margin-top: 28px;
     }
 
     .contact-item {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .15);
+
       border-radius: 14px;
       padding: 14px 18px;
+
       display: flex;
       align-items: center;
       gap: 10px;
@@ -328,12 +436,32 @@
     }
 
     @media (max-width: 768px) {
+
+      .hero {
+        padding: 72px 0 56px;
+      }
+
       .hero h1 {
-        font-size: 38px;
+        font-size: 34px;
+        line-height: 1.25;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 64px 0;
       }
 
       .section-title {
-        font-size: 30px;
+        font-size: 28px;
+        line-height: 1.3;
+      }
+
+      .section-desc {
+        font-size: 15px;
+        margin-bottom: 36px;
       }
 
       .nav-links {
@@ -341,15 +469,58 @@
       }
 
       .demo {
-        padding: 24px;
+        padding: 16px;
+        border-radius: 20px;
+      }
+
+      .passport-head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .passport-top-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .passport-body {
+        padding: 20px;
+      }
+
+      .dpp-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .supply-chain-item {
+        flex-direction: column;
+        gap: 6px;
       }
 
       .contact {
-        padding: 36px 24px;
+        padding: 36px 20px;
       }
 
       .contact h2 {
-        font-size: 30px;
+        font-size: 28px;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-item {
+        justify-content: center;
       }
     }
   </style>
@@ -359,6 +530,7 @@
 
   <nav class="nav">
     <div class="container nav-wrap">
+
       <div class="logo">
         <div class="logo-box">
           <i class="ti ti-qrcode"></i>
@@ -376,11 +548,13 @@
         <a href="#demo">产品演示</a>
         <a href="#contact">联系我们</a>
       </div>
+
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
+
       <div class="badge">
         <i class="ti ti-shield-check"></i>
         欧盟 ESPR 合规服务
@@ -392,7 +566,7 @@
       </h1>
 
       <p>
-        欧盟数字产品护照（DPP）将逐步成为出口欧洲的重要要求。
+        欧盟数字产品护照（DPP）正在成为出口欧洲的重要要求。
         GreenLean 提供从产品数据整理、标准化建模，到二维码生成与 DPP 展示的一站式服务。
       </p>
 
@@ -405,39 +579,45 @@
           免费咨询
         </button>
       </div>
+
     </div>
   </section>
 
   <section class="section" id="about">
     <div class="container">
+
       <h2 class="section-title">什么是欧盟 DPP？</h2>
 
       <p class="section-desc">
-        DPP（Digital Product Passport）是欧盟《ESPR生态设计法规》中的核心机制。
-        企业需要向供应链与消费者披露产品材料、碳排放、可回收性、供应链来源等数据。
+        DPP（Digital Product Passport）是欧盟《ESPR生态设计法规》的核心机制。
+        企业需要向品牌方、监管机构与消费者披露产品材料、碳排放、可回收性、供应链来源等数据。
       </p>
 
       <div class="grid">
+
         <div class="card">
           <div class="card-icon">
             <i class="ti ti-database"></i>
           </div>
+
           <h3>数据采集</h3>
-          <p>系统整理产品材料、供应商、工艺与检测数据。</p>
+          <p>整理产品材料、供应商、工艺与检测数据。</p>
         </div>
 
         <div class="card">
           <div class="card-icon">
             <i class="ti ti-braces"></i>
           </div>
+
           <h3>标准化建模</h3>
-          <p>根据欧盟标准生成结构化 DPP 数据。</p>
+          <p>生成符合欧盟要求的结构化 DPP 数据。</p>
         </div>
 
         <div class="card">
           <div class="card-icon">
             <i class="ti ti-qrcode"></i>
           </div>
+
           <h3>二维码护照</h3>
           <p>生成可扫码访问的数字产品护照页面。</p>
         </div>
@@ -446,26 +626,32 @@
           <div class="card-icon">
             <i class="ti ti-refresh"></i>
           </div>
+
           <h3>持续合规</h3>
           <p>法规更新追踪与年度数据维护服务。</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <section class="section" id="service">
     <div class="container">
+
       <h2 class="section-title">我们提供什么服务？</h2>
 
       <p class="section-desc">
-        我们专注中国出口企业的 DPP 与 ESG 数据服务，尤其聚焦纺织、五金、电子等行业。
+        我们专注中国出口企业的 DPP 与 ESG 数据服务，
+        尤其聚焦纺织、五金、电子等行业。
       </p>
 
       <div class="grid">
+
         <div class="card">
           <div class="card-icon">
             <i class="ti ti-file-search"></i>
           </div>
+
           <h3>合规诊断</h3>
           <p>分析企业现有数据结构与欧盟要求之间的差距。</p>
         </div>
@@ -474,6 +660,7 @@
           <div class="card-icon">
             <i class="ti ti-json"></i>
           </div>
+
           <h3>JSON 数据生成</h3>
           <p>输出符合 DPP 逻辑的结构化标准数据。</p>
         </div>
@@ -482,6 +669,7 @@
           <div class="card-icon">
             <i class="ti ti-world"></i>
           </div>
+
           <h3>DPP 展示页面</h3>
           <p>支持中英双语产品护照展示页面搭建。</p>
         </div>
@@ -490,70 +678,104 @@
           <div class="card-icon">
             <i class="ti ti-chart-bar"></i>
           </div>
+
           <h3>ESG / 碳数据</h3>
           <p>帮助企业逐步建立碳排放与环境指标体系。</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <section class="section" id="demo">
     <div class="container">
+
       <h2 class="section-title">数字产品护照示例</h2>
 
       <p class="section-desc">
-        以下为纺织行业 DPP 页面示例，采购商、品牌方与监管机构可通过二维码查看完整产品信息、供应链数据、环境指标与认证状态。
+        以下为纺织行业 DPP 页面示例，
+        采购商、品牌方与监管机构可通过二维码查看完整产品信息与供应链数据。
       </p>
 
       <div class="demo">
+
         <div class="passport">
 
           <div class="passport-head">
+
             <div>
-              <h3 style="font-size:24px;margin-bottom:8px">有机棉针织 T 恤（基础款）</h3>
-              <p style="opacity:.85">Qingdao Green Textile Co., Ltd. ｜ SKU-TX-2025-001</p>
+              <h3 style="font-size:24px;margin-bottom:8px">
+                有机棉针织 T 恤（基础款）
+              </h3>
+
+              <p style="opacity:.85">
+                Qingdao Green Textile Co., Ltd.
+                ｜ SKU-TX-2025-001
+              </p>
             </div>
 
-            <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+            <div class="passport-top-right">
+
               <div style="text-align:right">
-                <div style="font-size:12px;opacity:.7">数字护照编号</div>
-                <div style="font-size:15px;font-weight:600">DPP-CN-2025-TX-00127</div>
-                <div style="font-size:12px;opacity:.7;margin-top:6px">有效期至 2027-12-31</div>
+                <div style="font-size:12px;opacity:.7">
+                  数字护照编号
+                </div>
+
+                <div style="font-size:15px;font-weight:600">
+                  DPP-CN-2025-TX-00127
+                </div>
+
+                <div style="font-size:12px;opacity:.7;margin-top:6px">
+                  有效期至 2027-12-31
+                </div>
               </div>
 
-              <div style="background:white;padding:10px;border-radius:12px;width:90px;height:90px;display:flex;align-items:center;justify-content:center">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.greanlean.com" alt="DPP二维码" style="width:100%;height:100%">
+              <div
+                style="background:white;padding:10px;border-radius:12px;width:90px;height:90px;display:flex;align-items:center;justify-content:center">
+
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.greanlean.com"
+                  alt="DPP二维码"
+                  style="width:100%;height:100%">
               </div>
+
             </div>
           </div>
 
           <div class="passport-body">
 
-            <div style="display:grid;grid-template-columns:300px 1fr;gap:32px;margin-bottom:40px">
+            <div class="dpp-layout">
 
               <div>
-                <div style="border-radius:20px;overflow:hidden;border:1px solid var(--border);background:#f5f5f5">
-                  <img 
-                    src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=800" 
+
+                <div
+                  style="border-radius:20px;overflow:hidden;border:1px solid var(--border);background:#f5f5f5">
+
+                  <img
+                    src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="有机棉T恤"
-                    style="width:100%;display:block;aspect-ratio:1;object-fit:cover"
-                  >
+                    style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover">
                 </div>
 
-                <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-                  <span style="background:#E7F7F1;color:#0F6E56;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600">GOTS认证</span>
-                  <span style="background:#E7F7F1;color:#0F6E56;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600">OEKO-TEX</span>
-                  <span style="background:#E7F7F1;color:#0F6E56;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600">REACH合规</span>
-                  <span style="background:#f3f4f6;color:#374151;padding:6px 12px;border-radius:999px;font-size:12px">低碳生产</span>
+                <div class="product-tags">
+                  <span class="product-tag">GOTS认证</span>
+                  <span class="product-tag">OEKO-TEX</span>
+                  <span class="product-tag">REACH合规</span>
+                  <span class="product-tag gray">低碳生产</span>
                 </div>
+
               </div>
 
               <div>
 
                 <div style="margin-bottom:28px">
-                  <h3 style="font-size:18px;margin-bottom:14px">产品概览</h3>
+
+                  <h3 style="font-size:18px;margin-bottom:14px">
+                    产品概览
+                  </h3>
 
                   <div class="info-grid">
+
                     <div class="info-item">
                       <div class="info-label">产品类别</div>
                       <div class="info-value">针织服装</div>
@@ -583,29 +805,39 @@
                       <div class="info-label">生产年份</div>
                       <div class="info-value">2025</div>
                     </div>
+
                   </div>
                 </div>
 
                 <div style="margin-bottom:28px">
-                  <h3 style="font-size:18px;margin-bottom:14px">材料组成</h3>
 
-                  <div style="border:1px solid var(--border);border-radius:16px;overflow:hidden">
-                    <div style="display:flex;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border)">
+                  <h3 style="font-size:18px;margin-bottom:14px">
+                    材料组成
+                  </h3>
+
+                  <div class="table-box">
+
+                    <div class="table-row">
                       <span>GOTS 有机棉</span>
                       <strong>95%</strong>
                     </div>
 
-                    <div style="display:flex;justify-content:space-between;padding:14px 18px">
+                    <div class="table-row">
                       <span>莱卡弹性纤维</span>
                       <strong>5%</strong>
                     </div>
+
                   </div>
                 </div>
 
                 <div>
-                  <h3 style="font-size:18px;margin-bottom:14px">环境与合规数据</h3>
+
+                  <h3 style="font-size:18px;margin-bottom:14px">
+                    环境与合规数据
+                  </h3>
 
                   <div class="info-grid">
+
                     <div class="info-item">
                       <div class="info-label">碳排放</div>
                       <div class="info-value">3.2 kg CO₂e</div>
@@ -625,38 +857,42 @@
                       <div class="info-label">数据状态</div>
                       <div class="info-value">已验证</div>
                     </div>
+
                   </div>
                 </div>
 
               </div>
             </div>
 
-            <div style="margin-top:20px">
-              <h3 style="font-size:18px;margin-bottom:18px">供应链溯源</h3>
+            <div>
 
-              <div style="display:grid;gap:12px">
+              <h3 style="font-size:18px;margin-bottom:18px">
+                供应链溯源
+              </h3>
 
-                <div style="display:flex;justify-content:space-between;padding:16px 20px;background:#f9fafb;border-radius:14px;border:1px solid var(--border)">
+              <div class="supply-chain-list">
+
+                <div class="supply-chain-item">
                   <span>棉花种植</span>
                   <strong>新疆阿克苏 GOTS 农场</strong>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;padding:16px 20px;background:#f9fafb;border-radius:14px;border:1px solid var(--border)">
+                <div class="supply-chain-item">
                   <span>纺纱加工</span>
                   <strong>山东纺织集团</strong>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;padding:16px 20px;background:#f9fafb;border-radius:14px;border:1px solid var(--border)">
+                <div class="supply-chain-item">
                   <span>染整工艺</span>
                   <strong>低温环保染色</strong>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;padding:16px 20px;background:#f9fafb;border-radius:14px;border:1px solid var(--border)">
+                <div class="supply-chain-item">
                   <span>成衣制造</span>
                   <strong>青岛 Green Textile</strong>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;padding:16px 20px;background:#f9fafb;border-radius:14px;border:1px solid var(--border)">
+                <div class="supply-chain-item">
                   <span>出口物流</span>
                   <strong>青岛港 → 汉堡港</strong>
                 </div>
@@ -664,15 +900,37 @@
               </div>
             </div>
 
+            <div class="json-box">
+
+<pre>{
+  "product_name": "Organic Cotton T-Shirt",
+  "sku": "SKU-TX-2025-001",
+  "material": "95% Organic Cotton",
+  "carbon_footprint": "3.2kg CO2e",
+  "recyclability": "82%",
+  "compliance": [
+    "GOTS",
+    "OEKO-TEX",
+    "REACH"
+  ],
+  "market": "EU",
+  "verified": true
+}</pre>
+
+            </div>
+
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+
       <div class="contact" id="contact">
+
         <h2>提前布局 DPP，进入欧洲市场</h2>
 
         <p>
@@ -681,6 +939,7 @@
         </p>
 
         <div class="contact-links">
+
           <div class="contact-item">
             <i class="ti ti-world"></i>
             www.greanlean.com
@@ -695,6 +954,7 @@
             <i class="ti ti-brand-instagram"></i>
             greanlean_dpp
           </div>
+
         </div>
       </div>
     </div>
@@ -707,6 +967,7 @@
   <script>
     function scrollToSection(id) {
       const el = document.getElementById(id)
+
       if (el) {
         el.scrollIntoView({
           behavior: 'smooth'
@@ -716,4 +977,5 @@
   </script>
 
 </body>
+
 </html>
