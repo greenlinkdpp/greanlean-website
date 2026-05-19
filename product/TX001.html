@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DPP - Organic Cotton T-Shirt</title>
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --bg-soft: #f7f9f8;
+      --text: #111827;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+
+      background: #f5f7f6;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .passport {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .passport-head {
+      background: var(--green);
+      color: white;
+      padding: 30px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .passport-top-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .passport-body {
+      padding: 32px;
+    }
+
+    .dpp-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .product-tags {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .product-tag {
+      background: #E7F7F1;
+      color: #0F6E56;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .info-item {
+      background: var(--bg-soft);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .table-box {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .table-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .table-row + .table-row {
+      border-top: 1px solid var(--border);
+    }
+
+    .supply-chain-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .supply-chain-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: #f9fafb;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .json-box {
+      margin-top: 40px;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      overflow-x: auto;
+    }
+
+    .json-box pre {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+
+      .passport-head {
+        flex-direction: column;
+      }
+
+      .passport-top-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .passport-body {
+        padding: 20px;
+      }
+
+      .dpp-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .supply-chain-item {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="passport">
+
+      <div class="passport-head">
+
+        <div>
+          <h2 id="product-name">
+            Organic Cotton T-Shirt
+          </h2>
+
+          <p style="opacity:.85">
+            Qingdao Green Textile Co., Ltd.
+            ｜ <span id="sku"></span>
+          </p>
+        </div>
+
+        <div class="passport-top-right">
+
+          <div style="text-align:right">
+            <div style="font-size:12px;opacity:.7">
+              Digital Product Passport
+            </div>
+
+            <div style="font-size:15px;font-weight:600">
+              DPP-CN-2025-TX001
+            </div>
+          </div>
+
+          <div
+            style="background:white;padding:10px;border-radius:12px;width:90px;height:90px">
+
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.greanlean.com/product/TX001.html"
+              style="width:100%">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="passport-body">
+
+        <div class="dpp-layout">
+
+          <div>
+
+            <div
+              style="border-radius:20px;overflow:hidden;border:1px solid #e5e7eb">
+
+              <img
+                src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=800"
+                style="width:100%;aspect-ratio:1/1;object-fit:cover">
+            </div>
+
+            <div class="product-tags">
+              <span class="product-tag">GOTS</span>
+              <span class="product-tag">OEKO-TEX</span>
+              <span class="product-tag">REACH</span>
+            </div>
+
+          </div>
+
+          <div>
+
+            <div style="margin-bottom:28px">
+
+              <h3 style="margin-bottom:14px">
+                Product Information
+              </h3>
+
+              <div class="info-grid">
+
+                <div class="info-item">
+                  <div class="info-label">Country</div>
+                  <div class="info-value" id="country"></div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-label">Carbon Footprint</div>
+                  <div class="info-value" id="carbon"></div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-label">Recyclability</div>
+                  <div class="info-value" id="recyclability"></div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div style="margin-bottom:28px">
+
+              <h3 style="margin-bottom:14px">
+                Material Composition
+              </h3>
+
+              <div class="table-box">
+
+                <div class="table-row">
+                  <span>Organic Cotton</span>
+                  <strong>95%</strong>
+                </div>
+
+                <div class="table-row">
+                  <span>Elastane</span>
+                  <strong>5%</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+
+          <h3 style="margin-bottom:18px">
+            Supply Chain Traceability
+          </h3>
+
+          <div class="supply-chain-list">
+
+            <div class="supply-chain-item">
+              <span>Cotton Farming</span>
+              <strong>Xinjiang GOTS Farm</strong>
+            </div>
+
+            <div class="supply-chain-item">
+              <span>Spinning</span>
+              <strong>Shandong Textile Group</strong>
+            </div>
+
+            <div class="supply-chain-item">
+              <span>Dyeing</span>
+              <strong>Low-temperature Eco Dyeing</strong>
+            </div>
+
+            <div class="supply-chain-item">
+              <span>Garment Manufacturing</span>
+              <strong>Qingdao Green Textile</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="json-box">
+          <pre id="json-data"></pre>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    fetch('/products/TX001.json')
+      .then(res => res.json())
+      .then(data => {
+
+        document.getElementById('product-name').innerText =
+          data.product_name
+
+        document.getElementById('sku').innerText =
+          data.sku
+
+        document.getElementById('country').innerText =
+          data.country
+
+        document.getElementById('carbon').innerText =
+          data.carbon_footprint
+
+        document.getElementById('recyclability').innerText =
+          data.recyclability
+
+        document.getElementById('json-data').innerText =
+          JSON.stringify(data, null, 2)
+
+      })
+
+  </script>
+
+</body>
+
+</html>
